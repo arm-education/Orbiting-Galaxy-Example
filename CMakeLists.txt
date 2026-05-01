@@ -20,5 +20,11 @@ add_executable(optimized
     src/optimized/simulation.cpp
 )
 
+add_executable(users_solution
+    src/users_solution/main.cpp
+    src/users_solution/simulation.cpp
+)
+
 target_link_libraries(baseline  m)
 target_link_libraries(optimized m)
+target_link_libraries(users_solution m)

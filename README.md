@@ -84,28 +84,37 @@ This example is intended to be used with the Performix **Memory Access** recipe:
 ## Project Structure
 
 ```
-src/
-    baseline/             # Provided Array-of-Structures implementation
-        baseline.cpp
-        simulation.cpp
-        simulation.hpp
-        particle.hpp
-        scopedTimer.hpp
-        visualization.hpp
-    optimized/            # Created by learner during the course
-        optimized.cpp
-        simulation.cpp
-        simulation.hpp
-        particle.hpp
-        scopedTimer.hpp
-        visualization.hpp
+AGENTS.md                 # Agent instructions for guided learning
+README.md
+CMakeLists.txt
 scripts/
     visualize.py          # Generates animated GIF from position snapshots
     gen_memory_layout_gif.py
     requirements.txt
 assets/
     galaxy_compressed.gif # Example animation of the galaxy simulation
-CMakeLists.txt
+src/
+    baseline/             # Provided Array-of-Structures implementation (READ ONLY)
+        baseline.cpp
+        simulation.cpp
+        simulation.hpp
+        particle.hpp
+        scopedTimer.hpp
+        visualization.hpp
+    optimized/            # Reference Structure-of-Arrays Solution
+        optimized.cpp
+        simulation.cpp
+        simulation.hpp
+        particle.hpp
+        scopedTimer.hpp
+        visualization.hpp
+    users_solution/       # Learner workspace for attempting optimization
+        main.cpp
+        simulation.cpp
+        simulation.hpp
+        particle.hpp
+        scopedTimer.hpp
+        visualization.hpp
 ```
 
 ---
