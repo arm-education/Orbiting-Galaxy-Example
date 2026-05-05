@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is an **educational repository** designed to teach learners about **memory access patterns** and the performance impact of data structure layout choices. The workload is a four-arm spiral galaxy simulation of 1,048,576 particles advancing through a kinematic position update.
+This is an educational repository designed to teach learners about memory access patterns and the performance impact of data structure layout choices. The workload is a four-arm spiral galaxy simulation of 1,048,576 particles advancing through a kinematic position update.
 
 The repository is intended to be used alongside:
 
@@ -16,7 +16,8 @@ The repository is intended to be used alongside:
 ```
 src/
     baseline/     # Provided Array-of-Structures (AoS) implementation — READ ONLY
-    optimized/    # To be created by the learner — DO NOT modify
+    users_solution/ # This is directory you can edit
+    optimized/    # Reference solution — READ ONLY
 ```
 
 ### Baseline (`src/baseline/`)
@@ -34,7 +35,7 @@ Additionally, `ParticleOwner` holds a `std::vector<Particle*>` — a vector of h
 
 ### Optimized (`src/optimized/`)
 
-This directory is **intentionally left for the learner to implement**. The goal is to restructure the data layout to improve cache utilisation. Do not add, edit, or delete any files in this directory on behalf of the learner.
+This directory is **READ ONLY**, like the baseline, and is a reference solution.
 
 ---
 
@@ -53,7 +54,7 @@ If a learner seems stuck or directly asks for a solution, you may offer progress
 
 ## Environment Requirements
 
-> ⚠️ **Performix only runs on Arm-based systems.** Before running any profiling commands, verify that the target machine meets the following requirements.
+**Performix only runs on Arm-based systems.** Before running any profiling commands, verify that the target machine meets the following requirements.
 
 ### Checklist before profiling
 
@@ -113,8 +114,7 @@ The primary Performix recipe for this example is the **Memory Access** recipe, w
 
 Encourage the learner to:
 1. Profile the **baseline** first to establish a baseline measurement.
-2. Implement their optimization in `src/optimized/`.
-3. Profile the **optimized** binary and **compare** the two reports.
+2. Implement their optimization in `src/users_solution/`.
 4. Reason about *why* the numbers changed based on their data layout decisions.
 
 Do not run `--visualize` when profiling, as it adds file I/O that skews the memory access results.
@@ -123,7 +123,7 @@ Do not run `--visualize` when profiling, as it adds file I/O that skews the memo
 
 ## What Not to Do
 
-- **Do not implement `src/optimized/`** on behalf of the learner.
-- **Do not edit any files in `src/optimized/`**, even as scaffolding.
+- **Do not edit `src/optimized/`** on behalf of the learner.
+- **Do not edit any files in `src/optimized/` or `src/baseline/` **, even as scaffolding.
 - Do not directly state the solution (e.g., "use a Structure of Arrays") without the learner reasoning toward it first.
 - Do not assume the learner is on a compatible machine — verify the environment first. You do not need to verify everytime.
